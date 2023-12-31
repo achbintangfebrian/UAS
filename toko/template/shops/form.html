@@ -1,0 +1,58 @@
+<!-- <form action="{% url 'shops.save' %}" method="post">
+  {% csrf_token %}
+
+  <label for="barang" type="text">Barang</label>
+  <br />
+  <input name="barang" type="text" />
+  <br />
+  <label for="publish" type="">Tanggal checkout</label>
+  <br />
+  <input name="publish" type="text" />
+  <br />
+  <label for="harga" type="text">Harga</label>
+  <br />
+  <input name="harga" type="text" />
+  <hr />
+
+  <input type="submit" value="simpan" />
+</form>
+
+<a href="{% url 'shops.index' %}">Back</a> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
+  </head>
+  <body>
+    <div class="container">
+      <form action="{% url 'shops.save' %}" method="post">
+        {% csrf_token %}
+
+        <div class="mb-3">
+          <label for="barang" class="form-label">Barang</label>
+          <input name="barang" type="text" class="form-control" id="barang" />
+        </div>
+        <div class="mb-3">
+          <label for="publish" class="form-label">Tanggal checkout</label>
+          <input
+            name="publish"
+            type="datetime-local"
+            class="form-control"
+            id="publish"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="harga" class="form-label">Harga</label>
+          <input name="harga" type="text" class="form-control" id="harga" />
+        </div>
+
+        <input type="submit" value="simpan" class="btn btn-primary" />
+        <a class="btn btn-primary" href="{% url 'shops.index' %}">Back</a>
+      </form>
+    </div>
+  </body>
+</html>
